@@ -5,6 +5,7 @@ export const getProjects = async (req,res) =>{
     try {
         const projectInfo = await Project.find({})
         res.json(projectInfo)
+        res.header('Access-Control-Allow-Origin', "https://betterportfolio-production.up.railway.app")
     } catch (error) {
         console.log('error: ', error)
     }

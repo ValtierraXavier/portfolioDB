@@ -8,7 +8,7 @@ let connectConfig = {
 
 mongoose.set('strictQuery', false)
 
-const url = process.env.MONGO_URL || 'mongodb://mongo:JZPlQmJOB6p3sePQu77H@containers-us-west-78.railway.app:7642'
+const url = process.env.MONGO_URL || 'mongodb+srv://generalUser:242013@portcluster.zko38eq.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(url, connectConfig)
 
