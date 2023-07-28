@@ -2,9 +2,10 @@ import Comment from '../Models/CommentModels.js'
 // import Project, { projectSchema } from '../Models/ProjectModels.js'
 
 export const getComments = async (req,res) =>{
-    try {
+    try { 
             const comments = await Comment.find({})   
             await res.json(comments)
+            res.append('Access-Control-Allow-origin', 'betterportfolio' )
     } catch (error) {
         console.log('error: ', error)
     }
