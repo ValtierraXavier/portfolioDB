@@ -12,7 +12,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Database/DB/server.js"
+    "start": "node Database/DB/server.js",
+    "commitThis": "git add . && git commit -m 'routine commit' && git push origin main"
   },
   "keywords": [],
   "author": "",
