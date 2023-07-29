@@ -1,6 +1,6 @@
 import Comment from '../Models/CommentModels.js'
-// import Project, { projectSchema } from '../Models/ProjectModels.js'
 
+// (GET) Query the comments Collection for every Document it contains. (unrestricted)
 export const getComments = async (req,res) =>{
     try { 
             const comments = await Comment.find({})   
@@ -9,7 +9,7 @@ export const getComments = async (req,res) =>{
         console.log('error: ', error)
     }
 }
-
+// (GET) Query the comments Collection for a single Document using the objectId
 export const getComment = async (req,res) =>{
     try {
         const singleComment = await Comment.findById(id)
@@ -23,16 +23,18 @@ export const getComment = async (req,res) =>{
     }
 }
 
+// (POST) Query the comments Collection to create a new document using the data in req.body
 export const addComment = async (req,res) => {
-try {
-    const newComment = new Comment(req.body)
-    await newComment.save()
-    await res.send(`${newComment}\n\bwas entered into the DB\b`)
-} catch (error) {
-    console.log('error: ', error)
-}
+    try {
+        const newComment = new Comment(req.body)
+        await newComment.save()
+        await res.send(`${newComment}\n\bwas entered into the DB\b`)
+    } catch (error) {
+        console.log('error: ', error)
+    }
 }
 
+// (POST) Query the comments Collection to update an existing document using the ObjectId to find the document and req.body for update data
 export const updateComment = async(req,res) => {
     try {       
         const {id} = req.params
@@ -46,6 +48,7 @@ export const updateComment = async(req,res) => {
     }
 }
 
+// (DELETE)Sends a delete request to the comments Collection to delete a specific document using the objectId
 export const deleteComment = async (req,res) =>{
     try{
         const {id} =req.params
