@@ -5,7 +5,6 @@ export const getComments = async (req,res) =>{
     try { 
             const comments = await Comment.find({})   
             await res.json(comments)
-            res.header('Access-Control-Allow-Origin', "https://betterportfolio-production.up.railway.app")
         } catch (error) {
         console.log('error: ', error)
     }
