@@ -1,4 +1,5 @@
 import Project from '../Models/ProjectModels.js'
+import Comments, {commentSchema} from '../Models/CommentModels.js'
 
 export const getProjects = async (req,res) =>{
     try {
